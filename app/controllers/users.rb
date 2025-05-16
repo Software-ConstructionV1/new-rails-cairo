@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     def index
-        puts "Hello from UsersController"
+        Render plain: "Hello from UsersController"
     end
-
 end
