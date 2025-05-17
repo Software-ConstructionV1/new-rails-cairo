@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
   end
   def show
     @post = Post.find(params[:id])
@@ -26,5 +26,10 @@ class PostsController < ApplicationController
     else
       render :edit, status: 422
     end
+  end
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy!
+    redirect_to posts_path
   end
 end
