@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       name: params[:user][:name],
       DOB: params[:user][:DOB],
       email: params[:user][:email],
-      phone_number: params[:user][:phone_number]
+      phone_number: params[:user][:phone_number],
+      address: params[:user][:address]
     })
     if @user.save
       redirect_to @user, notice: 'User was created successfully.'
@@ -35,7 +36,8 @@ class UsersController < ApplicationController
       name: params[:user][:name],
       DOB: params[:user][:DOB],
       email: params[:user][:email],
-      phone_number: params[:user][:phone_number]
+      phone_number: params[:user][:phone_number],
+      address: params[:user][:address]
     })
       redirect_to @user, notice: 'User was updated successfully.'
     else
