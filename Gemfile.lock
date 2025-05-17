@@ -107,6 +107,8 @@ GEM
     dotenv (3.1.8)
     drb (2.2.1)
     ed25519 (1.4.0)
+    email_validator (2.2.4)
+      activemodel
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
@@ -375,6 +377,7 @@ DEPENDENCIES
   byebug
   capybara
   debug
+  email_validator
   importmap-rails
   jbuilder
   kamal
