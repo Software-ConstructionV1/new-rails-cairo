@@ -35,4 +35,4 @@
 /vendor/
 
 .gitignore
-
+db/schema.rb
