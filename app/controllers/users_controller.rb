@@ -21,7 +21,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(name: params[:user][:name], DOB: params[:user][:DOB], email: params[:user][:email], phone_number: params[:user][:phone_number])
-      redirect_to users_path
+      redirect_to @user
     end
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
+    redirect_to users_path
   end
 end
