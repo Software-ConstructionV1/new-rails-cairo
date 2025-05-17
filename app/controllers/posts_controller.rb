@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "Post created successfully !"
     else
-      render :new
     end
   end
   def edit
