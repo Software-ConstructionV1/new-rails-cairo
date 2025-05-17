@@ -3,3 +3,5 @@ class UsersController < ApplicationController
         @message = "Hello from UsersController"
     end
 end
+
+#Post(title:string, content:string)  
