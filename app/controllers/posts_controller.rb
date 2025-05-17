@@ -11,9 +11,20 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(title: params[:post][:title], content: params[:post][:content])
     if @post.save
-      redirect_to @post, message: "Post created successfully !"
+      redirect_to @post, notice: "Post created successfully !"
     else
       render :new
+    end
+  end
+  def edit
+    @post = Post.find(params[:id])
+  end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(title: params[:post][:title], content: params[:post][:content])
+      redirect_to @post, notice: "Post updated successfully !"
+    else
+      render :edit, status: 422
     end
   end
 end
