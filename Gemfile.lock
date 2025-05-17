@@ -87,6 +87,7 @@ GEM
     brakeman (7.0.2)
       racc
     builder (3.3.0)
+    byebug (12.0.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -106,6 +107,8 @@ GEM
     dotenv (3.1.8)
     drb (2.2.1)
     ed25519 (1.4.0)
+    email_validator (2.2.4)
+      activemodel
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
@@ -371,8 +374,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  byebug
   capybara
   debug
+  email_validator
   importmap-rails
   jbuilder
   kamal
