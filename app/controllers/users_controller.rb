@@ -10,13 +10,13 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  def create 
 
+  def create 
     @user = User.new(name: params[:user][:name], email: params[:user][:email], phone_number: params[:user][:phone_number], dob: params[:user][:dob])
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
     else
-      render :new
+      render :new , status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(name: params[:user][:name], email: params[:user][:email],phone_number: params[:user][:phone_number], dob: params[:user][:dob])
       redirect_to @user, notice: 'User was successfully updated.'
     else
-      render :edit
+      render :edit , status: :unprocessable_entity
     end
   end
 
