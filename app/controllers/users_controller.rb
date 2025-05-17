@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: params[:user][:name], DOB: params[:user][:DOB], email: params[:user][:email], phone_number: params[:user][:phone_number])
     if @user.save
-      redirect_to @user
+      redirect_to @user, notice: "User created successfully !"
     else
     end
   end
@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(name: params[:user][:name], DOB: params[:user][:DOB], email: params[:user][:email], phone_number: params[:user][:phone_number])
       redirect_to @user
+    else
+      render :edit, status: 422
     end
   end
   def destroy
