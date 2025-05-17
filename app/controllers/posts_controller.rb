@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     
     def create
 
-        @post = Post.new(params[:title, :content])
+        @post = Post.new(post_params)
         if @post.save
             redirect_to @post, notice: "Post was successfully created."
         else
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     end
     def update
         @post = Post.find(params[:id])
-        if @post.update(params[:title, :content])
+        if @post.update(post_params)
             redirect_to @post, notice: "Post was successfully updated."
         else
             render :edit, status: :unprocessable_entity
@@ -38,9 +38,9 @@ class PostsController < ApplicationController
         redirect_to posts_path, notice: "Post was successfully deleted."
     end
 
-    # private
+    private
 
-    # def post_params
-    #     params.require(:post).permit(:title, :content)
-    # end
+    def post_params
+        params.require(:post).permit(:title, :content)
+    end
 end
